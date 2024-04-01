@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "campus.jwt.admin-secret-key",
+      "type": "java.lang.String",
+      "description": "Description for campus.jwt.admin-secret-key."
+    },
+    {
+      "name": "campus.jwt.admin-ttl",
+      "type": "java.lang.String",
+      "description": "Description for campus.jwt.admin-ttl."
+    },
+    {
+      "name": "campus.jwt.admin-token-name",
+      "type": "java.lang.String",
+      "description": "Description for campus.jwt.admin-token-name."
+    }
+  ] }

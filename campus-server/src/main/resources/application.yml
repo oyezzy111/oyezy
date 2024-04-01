@@ -1,0 +1,56 @@
+#spring.application.name=Campus_server
+
+server:
+  port: 8080
+#
+spring:
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url:  jdbc:mysql://localhost:3306/campus_aides?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.entity
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+
+
+#logging:
+#  level:
+#    com:
+#      campus:
+#        mapper: debug
+#        service: info
+#        controller: info
+#
+knife4j:
+  enable: true
+
+campus:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: itcast
+    # 设置jwt过期时间
+    admin-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    admin-token-name: token
+
+#
+#
+#  alioss:
+#    endpoint: ${campus.alioss.endpoint}
+#    access-key-id: ${campus.alioss.access-key-id}
+#    access-key-secret: ${campus.alioss.access-key-secret}
+#    bucket-name: ${campus.alioss.bucket-name}
+
