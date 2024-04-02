@@ -16,23 +16,6 @@ public interface AdminService {
     void update(AdminUpdateDto adminUpdateDto);
 
     /**
-     * 查询超市月流水
-     *  @param year
-     * @param month
-     * @return
-     */
-    AdminQueryVo monthSum(int year, int month);
-
-
-
-    /**
-     * 查询跑腿年流水
-     * @param year
-     * @return
-     */
-    ArrayList<AdminQueryVo> yearSumQuery(int year);
-
-    /**
      * 管理员登陆
      * @param adminLoginDto
      * @return

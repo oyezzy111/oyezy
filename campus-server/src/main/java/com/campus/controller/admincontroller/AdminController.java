@@ -80,30 +80,4 @@ public class AdminController {
         adminServiceImpl.update(adminUpdateDto);
         return Result.success();
     }
-
-    /**
-     * 管理员查询网站月总流水
-     * @param year
-     * @param month
-     * @return
-     */
-    @GetMapping("/month/{year}/{month}")
-    @ApiOperation("管理员查询网站月总流水")
-    public Result<AdminQueryVo> sumMonth(@PathVariable int year, @PathVariable int month) {
-        AdminQueryVo adminQueryVo = adminServiceImpl.monthSum(year, month);
-        return Result.success(adminQueryVo);
-    }
-
-
-    /**
-     * 管理员查询网站年流水
-     * @param year
-     * @return
-     */
-    @GetMapping("/year/{year}")
-    @ApiOperation("管理员查询网站年总流水")
-    public Result<ArrayList<AdminQueryVo>> yearSumQuery(@PathVariable int year) {
-        ArrayList<AdminQueryVo> queryList = adminServiceImpl.yearSumQuery(year);
-        return Result.success(queryList);
-    }
 }
