@@ -16,14 +16,14 @@ public interface AdminBossMapper {
      * @return
      */
     Page<Boss> pageQuery(AdminBossPageDto adminBossPageDto);
-
-    /**
-     * 管理员根据名称模糊匹配查询用户信息
-     * @param nickname
-     * @return
-     */
-    @Select("select * from boss where nickname like concat('%',#{nickname},'%')")
-    ArrayList<Boss> getByName(String nickname);
+//
+//    /**
+//     * 管理员根据名称模糊匹配查询用户信息
+//     * @param nickname
+//     * @return
+//     */
+//    @Select("select * from boss where nickname like concat('%',#{nickname},'%')")
+//    ArrayList<Boss> getByName(String nickname);
 
     /**
      * 管理员根据id查询老板具体信息
@@ -45,12 +45,12 @@ public interface AdminBossMapper {
      */
     @Update("update boss set status =0 where id= #{id}")
     void deleteById(int id);
-
-    /**
-     * 管理员删除已注销老板信息
-     */
-    @Delete("delete from boss where status = 2")
-    void deregister();
+//
+//    /**
+//     * 管理员删除已注销老板信息
+//     */
+//    @Delete("delete from boss where status = 2")
+//    void deregister();
 
     /**
      * 管理员添加老板

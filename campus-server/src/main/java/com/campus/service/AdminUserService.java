@@ -16,12 +16,6 @@ public interface AdminUserService {
      */
     public PageResult pageQuery(AdminUserPageDto adminUserPageDto);
 
-    /**
-     * 管理员根据昵称模糊查询用户信息
-     * @param nickname
-     * @return
-     */
-    ArrayList<User> getByName(String nickname);
 
     /**
      * 管理员根据id查询用户信息

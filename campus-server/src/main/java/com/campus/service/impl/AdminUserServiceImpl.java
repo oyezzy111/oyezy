@@ -39,17 +39,6 @@ public class AdminUserServiceImpl implements AdminUserService {
     }
 
     /**
-     * 管理员根据昵称模糊查询用户信息
-     * @param nickname
-     * @return
-     */
-    @Override
-    public ArrayList<User> getByName(String nickname) {
-        ArrayList<User> list = adminUserMapper.getByName(nickname);
-        return list;
-    }
-
-    /**
      * 管理员根据id查询用户信息
      * @param id
      * @return
@@ -57,7 +46,6 @@ public class AdminUserServiceImpl implements AdminUserService {
     @Override
     public User getById(int id) {
         User user= adminUserMapper.getById(id);
-        user.setPassword("********");
         return user;
     }
 

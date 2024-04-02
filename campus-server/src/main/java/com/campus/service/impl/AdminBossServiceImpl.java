@@ -40,16 +40,6 @@ public class AdminBossServiceImpl implements AdminBossService {
         return new PageResult(total,result);
     }
 
-    /**
-     * 管理员根据昵称模糊匹配老板信息
-     * @param nickname
-     * @return
-     */
-    @Override
-    public ArrayList<Boss> getByName(String nickname) {
-        ArrayList<Boss> list = adminBossMapper.getByName(nickname);
-        return list;
-    }
 
     /**
      * 管理员根据id查询老板信息
@@ -59,7 +49,6 @@ public class AdminBossServiceImpl implements AdminBossService {
     @Override
     public Boss getById(int id) {
         Boss boss = adminBossMapper.getById(id);
-        boss.setPassword("******");
         return boss;
     }
 
@@ -87,10 +76,6 @@ public class AdminBossServiceImpl implements AdminBossService {
         adminBossMapper.deleteById(id);
     }
 
-    @Override
-    public void deregister() {
-        adminBossMapper.deregister();
-    }
 
     /**
      * 管理员添加老板
@@ -102,10 +87,10 @@ public class AdminBossServiceImpl implements AdminBossService {
         BeanUtils.copyProperties(adminBossSaveDto,boss);
         boss.setPassword(PasswordConstant.PASSWORD);
         //TODO 管理员添加用户时间
-//        boss.setCreateTime(" "+LocalDateTime.now());
-//        boss.setCreateUser(1);
-//        boss.setUpdateUser(1);
-//        boss.setUpdateTime(" "+LocalDateTime.now());
+        boss.setCreateTime(" "+LocalDateTime.now());
+        boss.setCreateUser(1);
+        boss.setUpdateUser(1);
+        boss.setUpdateTime(" "+LocalDateTime.now());
         adminBossMapper.save(boss);
     }
 }

@@ -35,18 +35,6 @@ public class AdminUserController {
   }
 
   /**
-   * 管理员通过搜索用户昵称模糊查询
-   * @param nickname
-   * @return
-   */
-  @GetMapping("/nickname/{nickname}")
-  @ApiOperation("管理员通过搜索用户昵称模糊查询")
-  public Result<ArrayList<User>> getByName(@PathVariable String nickname){
-    ArrayList<User> list = adminUserServiceImpl.getByName(nickname);
-    return Result.success(list);
-  }
-
-  /**
    *管理员根据id查询用户信息
    * @param id
    * @return

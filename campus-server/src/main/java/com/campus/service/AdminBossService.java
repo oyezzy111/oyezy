@@ -17,12 +17,6 @@ public interface AdminBossService {
      */
     PageResult pageQuery(AdminBossPageDto adminBossPageDto);
 
-    /**
-     * 管理员根据昵称模糊查询老板信息
-     * @param nickname
-     * @return
-     */
-    ArrayList<Boss> getByName(String nickname);
 
     /**
      * 管理员根据id查询老板信息
@@ -43,10 +37,10 @@ public interface AdminBossService {
      */
     void deleteById(int id);
 
-    /**
-     * 管理员删除已注销老板信息
-     */
-    void deregister();
+//    /**
+//     * 管理员删除已注销老板信息
+//     */
+//    void deregister();
 
     /**
      * 管理员添加老板信息

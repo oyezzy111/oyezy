@@ -39,18 +39,6 @@ public class AdminBossController {
     }
 
     /**
-     * 管理员通过搜索老板昵称模糊查询
-     * @param nickname
-     * @return
-     */
-    @GetMapping("/nickname/{nickname}")
-    @ApiOperation("管理员通过搜索老板昵称模糊查询")
-    public Result<ArrayList<Boss>> getByName(@PathVariable String nickname){
-        ArrayList<Boss> list = adminBossServiceImpl.getByName(nickname);
-        return Result.success(list);
-    }
-
-    /**
      *管理员根据id查询用户信息
      * @param id
      * @return
@@ -97,7 +85,7 @@ public class AdminBossController {
 //    }
 
     /**
-     * 管理员新增用户信息
+     * 管理员新增老板信息
      * @param adminBossSaveDto
      * @return
      */
